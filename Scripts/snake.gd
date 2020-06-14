@@ -4,8 +4,12 @@ var direction := Vector2(1,0)
 var next_tail_dir := Vector2(1,0)
 var prev_dir := Vector2(1,0)
 const gap = 35
-var speed = 12
+export var speed = 300
 onready var tail = preload("res://Scenes/tail.tscn")
+
+func _ready():
+	add_tail()
+	add_tail()
 
 func add_tail():
 	var inst = tail.instance()
@@ -57,7 +61,7 @@ func _physics_process(delta):
 		prev_dir = direction
 		dir_change = true
 	var head_pos = $head.position
-	$head.position += Vector2(int(direction.x), int(direction.y)) * speed# * delta
+	$head.position += Vector2(int(direction.x), int(direction.y)) * speed * delta
 # note change in direction for tails
 	if dir_change:
 		for i in range(1, get_child_count()):

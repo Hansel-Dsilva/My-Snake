@@ -9,6 +9,7 @@ extents = Vector2( 15, 15 )
 [node name="snake" type="Node2D"]
 position = Vector2( 0, -1 )
 script = ExtResource( 2 )
+speed = 500
 
 [node name="head" type="Area2D" parent="."]
 
