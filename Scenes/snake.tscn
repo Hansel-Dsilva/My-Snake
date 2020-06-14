@@ -12,9 +12,18 @@ script = ExtResource( 2 )
 speed = 500
 
 [node name="head" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="head"]
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="head"]
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

@@ -3,7 +3,7 @@ extends Node2D
 var direction := Vector2(1,0)
 var next_tail_dir := Vector2(1,0)
 var prev_dir := Vector2(1,0)
-const gap = 35
+const gap = 45
 export var speed = 300
 onready var tail = preload("res://Scenes/tail.tscn")
 
@@ -55,13 +55,15 @@ func _physics_process(delta):
 		direction = Vector2(-1,0)
 	elif(Input.is_action_pressed("ui_right")):
 		direction = Vector2(1,0)
+	if direction == -prev_dir:
+		direction = prev_dir
 # movement of head
 	var dir_change = false
 	if prev_dir != direction:
 		prev_dir = direction
 		dir_change = true
 	var head_pos = $head.position
-	$head.position += Vector2(int(direction.x), int(direction.y)) * speed * delta
+	$head.position += direction * speed * delta
 # note change in direction for tails
 	if dir_change:
 		for i in range(1, get_child_count()):

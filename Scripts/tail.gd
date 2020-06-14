@@ -3,7 +3,6 @@ extends Area2D
 var directions = []
 var pos_array = []
 var cur_dir = Vector2()
-var prev_tail
 
 func _physics_process(delta):
 	if directions.size():
@@ -22,3 +21,9 @@ func add_to_tail(head_pos, dir):
 	#pos_array.append(Vector2(int(head_pos.x), int(head_pos.y)))
 	pos_array.append(head_pos)
 	directions.append(dir)
+
+
+func _on_tail_area_entered(area):
+	if area.name == 'head':
+#		get_tree().call_deferred("reload_current_scene")
+		get_tree().call_deferred("change_scene", "res://Scenes/EndScreen.tscn")

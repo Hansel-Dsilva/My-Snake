@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="My Snake"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://icon.png"
 
 [rendering]
