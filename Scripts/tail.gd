@@ -22,7 +22,6 @@ func add_to_tail(head_pos, dir):
 	pos_array.append(head_pos)
 	directions.append(dir)
 
-
 func _on_tail_area_entered(area):
 	if area.name == 'head':
 #		get_tree().call_deferred("reload_current_scene")

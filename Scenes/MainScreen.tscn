@@ -24,10 +24,11 @@ expand = true
 stretch_mode = 2
 
 [node name="Title" parent="." instance=ExtResource( 1 )]
-margin_left = -116.0
-margin_top = 158.448
-margin_right = 116.0
-margin_bottom = 187.448
+margin_left = -146.0
+margin_top = 158.0
+margin_right = 146.0
+margin_bottom = 187.0
+text = "<Enter Title Here>"
 
 [node name="Menu" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -46,4 +47,5 @@ __meta__ = {
 next_scene_path = "res://Scenes/Game.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 3 )]
-text = "Quit"
+margin_top = 57.0
+margin_bottom = 110.0
