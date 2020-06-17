@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent):
 		scene_tree.set_input_as_handled()
 
 func update_interface():
-	score.text = "Score: %s" % PlayerData.score
+	score.text = str(PlayerData.score)
 
 func set_paused(value: bool):
 	paused = value

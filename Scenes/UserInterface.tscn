@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Title.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/QuitButton.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/RetryButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=5]
 [ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/Roboto_black_title.tres" type="DynamicFont" id=7]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -22,10 +23,10 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -94.5
-margin_top = 29.2203
+margin_top = 19.248
 margin_right = 94.5
-margin_bottom = 84.2203
-text = "Score: %s"
+margin_bottom = 74.248
+custom_fonts/font = ExtResource( 7 )
 align = 1
 valign = 1
 __meta__ = {
