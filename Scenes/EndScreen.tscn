@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Title.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/ChangeSceneButton.gd" type="Script" id=3]
 [ext_resource path="res://Assets/bg.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/EndScreen.gd" type="Script" id=5]
 [ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=7]
@@ -36,12 +35,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -134.0
+margin_left = -276.0
 margin_top = -135.0
-margin_right = 133.0
+margin_right = 275.0
 margin_bottom = -74.0
 text = "Your Score: %s
-Highscore: %s"
+Highscore: %s on %s"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -66,15 +65,8 @@ margin_bottom = 73.0
 text = "Again?"
 next_scene_path = "res://Scenes/Game.tscn"
 
-[node name="ChangeSceneButton" type="Button" parent="Menu" instance=ExtResource( 2 )]
+[node name="ChangeSceneButton" parent="Menu" instance=ExtResource( 2 )]
 margin_top = 77.0
-margin_right = 287.0
 margin_bottom = 150.0
-size_flags_vertical = 3
 text = "Main Menu"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 next_scene_path = "res://Scenes/MainScreen.tscn"
-[connection signal="button_up" from="Menu/ChangeSceneButton" to="Menu/ChangeSceneButton" method="_on_button_up"]

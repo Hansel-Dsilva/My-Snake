@@ -1,6 +1,7 @@
 extends Node
 
 var highscore setget set_highscore
+var score_time #: String
 const filepath = "user://save_game.json"
 
 func _ready():
@@ -12,19 +13,19 @@ func load_highscore():
 	if not file.file_exists(filepath): return
 	file.open(filepath, File.READ)
 	#highscore = file.get_var()
-	highscore = parse_json(file.get_as_text())
+	var data = parse_json(file.get_as_text())
+	highscore = data['score']
+	score_time = data['time']
 	file.close()
-	pass
 	
 func save_highscore():
 	var xfile = File.new()
-	#file.set_current_dir("user://")
 	print(xfile.open(filepath, File.WRITE))
-	#file.store_var(highscore)
-	xfile.store_string(to_json(highscore))
+	xfile.store_string(to_json({'score': highscore, 'time': score_time}))
 	xfile.close()
-	pass
 	
 func set_highscore(value):
 	highscore = value
+	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+	score_time = str(OS.get_date()['day']) + ' ' + months[OS.get_date()['month']] + ' ' + str(OS.get_date()['year'])
 	save_highscore()
